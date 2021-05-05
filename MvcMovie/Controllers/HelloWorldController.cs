@@ -6,16 +6,17 @@ namespace MvcMovie.Controllers
     public class HelloWorldController : Controller
     {
         // GET: HelloWorld
-        public string Index()
+        public ActionResult Index()
         {
-            return "This is my <b>default</b> action....";
+            return View();
         }
 
         // GET: /HelloWorld/Welcome/
-
-        public string Welcome()
+        // Note that this controller can serve results to both helloworld/welcome/[id]?name=[name] (default route)
+        // and helloworld/welcome/[name]/[id] (added route)
+        public string Welcome(string name, int ID = 1)
         {
-            return "This is the Welcome action method...";
+            return HttpUtility.HtmlEncode("Hello " + name + ", ID: " + ID);
         }
     }
 }

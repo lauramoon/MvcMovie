@@ -18,6 +18,12 @@ namespace MvcMovie
                 url: "{controller}/{action}/{id}",
                 defaults: new { controller = "Home", action = "Index", id = UrlParameter.Optional }
             );
+
+            // The default route is often sufficient for an MVC app, but here is an example of another route
+            routes.MapRoute(
+                name: "Hello",
+                url: "{controller}/{action}/{name}/{id}"
+            );
         }
     }
 }
