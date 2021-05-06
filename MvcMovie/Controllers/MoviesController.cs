@@ -15,9 +15,25 @@ namespace MvcMovie.Controllers
         private MovieDBContext db = new MovieDBContext();
 
         // GET: Movies
-        public ActionResult Index()
+        public ActionResult Index(string searchString)
         {
-            return View(db.Movies.ToList());
+            // to take advantage of the route configuration, could have the signature of this method as:
+            // string id
+            // and add here:
+            // string searchString = id;
+            // then movies/index/[searchterm] would also perform a search
+            var movies = from m in db.Movies
+                         select m;
+
+            if (!String.IsNullOrEmpty(searchString))
+            {
+                movies = movies.Where(s => s.Title.Contains(searchString));
+            }
+
+            return View(movies);
+
+            // default return wih no search functionality:
+            // return View(db.Movies.ToList());
         }
 
         // GET: Movies/Details/5
