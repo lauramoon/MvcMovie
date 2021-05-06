@@ -11,12 +11,21 @@ namespace MvcMovie.Controllers
             return View();
         }
 
-        // GET: /HelloWorld/Welcome/
+        // GET: /HelloWorld/WelcomeString
         // Note that this controller can serve results to both helloworld/welcome/[id]?name=[name] (default route)
         // and helloworld/welcome/[name]/[id] (added route)
-        public string Welcome(string name, int ID = 1)
+        public string WelcomeString(string name, int ID = 1)
         {
             return HttpUtility.HtmlEncode("Hello " + name + ", ID: " + ID);
+        }
+
+        // GET: /HelloWorld/Welcome
+        public ActionResult Welcome(string name, int numTimes = 1)
+        {
+            ViewBag.Message = "Hello " + name;
+            ViewBag.NumTimes = numTimes;
+
+            return View();
         }
     }
 }
