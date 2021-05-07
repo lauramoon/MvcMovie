@@ -1,4 +1,4 @@
 # MvcMovie
-This app is being created by following the ASP.NET MVC 5 tutorial found here: https://docs.microsoft.com/en-us/aspnet/mvc/overview/getting-started/introduction/getting-started
+This app was created by following the ASP.NET MVC 5 tutorial found here: https://docs.microsoft.com/en-us/aspnet/mvc/overview/getting-started/introduction/getting-started
 
-It is not currently deployed.
+It is deployed on Azure here: https://mvcmovie-lauramoon.azurewebsites.net/Movies
