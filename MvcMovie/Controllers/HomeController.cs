@@ -15,14 +15,14 @@ namespace MvcMovie.Controllers
 
         public ActionResult About()
         {
-            ViewBag.Message = "Your application description page.";
+            ViewBag.Message = "My first ASP.NET MVC 5 application.";
 
             return View();
         }
 
         public ActionResult Contact()
         {
-            ViewBag.Message = "Your contact page.";
+            ViewBag.Message = "Find Laura Moon:";
 
             return View();
         }
