@@ -52,6 +52,7 @@ namespace MvcMovie.Controllers
         }
 
         // GET: Movies/Details/5
+        // also works: movies/details/?id=1
         public ActionResult Details(int? id)
         {
             if (id == null)
