@@ -32,6 +32,9 @@ namespace MvcMovie.Models
 
     public class MovieDBContext : DbContext
     {
+        public MovieDBContext() : base("name=MvcMovieDbConnection")
+        {
+        }
         public DbSet<Movie> Movies { get; set; }
     }
 }
