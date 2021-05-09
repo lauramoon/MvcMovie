@@ -22,3 +22,8 @@ select,
 textarea {
     max-width: 280px;
 }
+
+.movie-filter {
+    padding-top: 15px;
+    padding-bottom: 15px;
+}
