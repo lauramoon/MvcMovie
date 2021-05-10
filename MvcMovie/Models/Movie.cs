@@ -13,7 +13,7 @@ namespace MvcMovie.Models
 
         [Display(Name = "Release Date")]
         [DataType(DataType.Date)]
-        [DisplayFormat(DataFormatString = "{0:yyy-MM-dd}", ApplyFormatInEditMode = true)]
+        [DisplayFormat(DataFormatString = "{0:yyyy-MM-dd}", ApplyFormatInEditMode = true)]
         public DateTime ReleaseDate { get; set; }
 
         [RegularExpression(@"^[A-Z]+[a-zA-Z'\s]*$")]
@@ -32,9 +32,16 @@ namespace MvcMovie.Models
 
     public class MovieDBContext : DbContext
     {
-        public MovieDBContext() : base("name=MvcMovieDbConnection")
+        public DbSet<Movie> Movies { get; set; }
+    }
+
+    public class MyDatabaseContext : DbContext
+    {
+
+        public MyDatabaseContext() : base("name=MvcMovieDbConnection")
         {
         }
-        public DbSet<Movie> Movies { get; set; }
+
+        public System.Data.Entity.DbSet<MvcMovie.Models.Movie> Movies { get; set; }
     }
 }
