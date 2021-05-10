@@ -6,7 +6,10 @@
 
 <h2>Movie List</h2>
 
-@Html.ActionLink("Create New", "Create")
+<p>
+    @Html.ActionLink("Create New", "Create")
+</p>
+
 
 
 @using (Html.BeginForm("Index", "Movies", FormMethod.Get, new { @class = "form-inline movie-filter"}))
